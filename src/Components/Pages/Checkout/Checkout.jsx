@@ -46,7 +46,7 @@ export default function Checkout() {
                   <td className="text-center">
                     <button
                       onClick={() => removeFromCart(p.id)}
-                      className="text-red-600 text-lg"
+                      className="text-red-600 text-lg cursor-pointer"
                     >
                       ❌
                     </button>
