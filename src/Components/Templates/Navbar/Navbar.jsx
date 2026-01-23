@@ -2,7 +2,7 @@ import { useState } from "react";
 import { FaShop } from "react-icons/fa6";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import { useCart } from "../../Context/CartContext";
-import { useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 
 export default function Navbar() {
   const [openCart, setOpenCart] = useState(false);
@@ -26,9 +26,15 @@ export default function Navbar() {
         </h2>
       </div>
       <ul className="flex space-x-6">
-        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">Shop</li>
-        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">About</li>
-        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">Contact</li>
+        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">
+          <NavLink to="/">Shop</NavLink>
+        </li>
+        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">
+          <NavLink to="/About">About</NavLink>
+        </li>
+        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">
+          <NavLink to="/Contact">Contact</NavLink>
+        </li>
       </ul>
       <div className="icon">
         <FaShop

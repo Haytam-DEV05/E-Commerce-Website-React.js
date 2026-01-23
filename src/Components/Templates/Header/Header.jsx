@@ -1,8 +1,12 @@
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router";
+// ALL PAGES =>
+// ==================
 import Navbar from "../Navbar/Navbar";
 import Products from "../../Pages/Profucts/Products";
 import DetailleProduct from "../../Pages/Profucts/DetailleProduct";
 import Checkout from "../../Pages/Checkout/Checkout";
+import About from "../../Pages/About/About";
+import Contact from "../../Pages/Contact/Contact";
 
 export default function Header() {
   const Linkes = createBrowserRouter([
@@ -21,6 +25,14 @@ export default function Header() {
         {
           path: "Checkout",
           element: <Checkout />,
+        },
+        {
+          path: "About",
+          element: <About />,
+        },
+        {
+          path: "Contact",
+          element: <Contact />,
         },
       ],
     },
