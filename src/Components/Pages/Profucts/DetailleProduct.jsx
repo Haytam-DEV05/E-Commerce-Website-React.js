@@ -32,58 +32,118 @@ export default function DetailleProduct() {
   };
 
   return (
-    <div className="max-w-250 mx-auto">
+    <div className="max-w-6xl mx-auto px-4 my-10">
+      {/* Back Button */}
       <button
-        className="bg-blue-400 text-white text-[20px] font-light py-1 px-5 cursor-pointer my-10 rounded"
         onClick={handleBtnPrev}
+        className="
+      my-8
+      text-sm
+      text-gray-700
+      hover:text-indigo-600
+      transition
+      font-medium
+      cursor-pointer
+    "
       >
-        retourn
+        ← Retour
       </button>
-      <div className="product bg-gray-400 md:flex items-center gap-10 max-w-[90%] md:max-w-[80%] mx-auto p-5 my-5 rounded-3xl">
-        <div className="image">
+
+      {/* Main Product */}
+      <div
+        className="
+      bg-white
+      border border-gray-200
+      rounded-3xl
+      shadow-sm
+      hover:shadow-lg
+      transition
+      md:flex
+      items-center
+      gap-10
+      p-6
+      max-w-[90%]
+      md:max-w-[80%]
+      mx-auto
+    "
+      >
+        {/* Image */}
+        <div className="flex-1 bg-gray-50 rounded-2xl p-6">
           <img
             src={currentProduct.image}
-            className="max-h-50 mx-auto md:max-h-full"
+            className="max-h-72 mx-auto object-contain"
+            alt={currentProduct.title}
           />
         </div>
-        <div className="info-content text-white">
-          <h2 className="text-[22px] font-semibold">{currentProduct.title}</h2>
-          <p className="text-[18px] my-5 line-clamp-3 md:line-clamp-5 lg:line-clamp-none">
+
+        {/* Info */}
+        <div className="flex-1 space-y-4 text-gray-800">
+          <h2 className="text-2xl font-semibold">{currentProduct.title}</h2>
+
+          <p className="text-gray-600 leading-relaxed line-clamp-5">
             {currentProduct.description}
           </p>
-          <span className="text-[20px]">{currentProduct.price}DH</span>
+
+          <span className="text-2xl font-bold text-gray-900 block">
+            {currentProduct.price} DH
+          </span>
+
           <button
-            className="bg-gray-300 cursor-pointer py-1 px-5 block mt-3"
             onClick={() => addToCart(currentProduct)}
+            className="
+          bg-indigo-600
+          hover:bg-indigo-700
+          text-white
+          px-6
+          py-2
+          rounded-lg
+          transition
+        "
           >
             Add To Cart
           </button>
         </div>
       </div>
-      {/* PRODUCTS FROM THE SAME CATEGORY */}
-      <div className="container-products grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-        {productsCategory.map((p) => {
-          return (
+
+      {/* PRODUCTS FROM SAME CATEGORY */}
+      <div className="mt-16">
+        <h3 className="text-xl font-semibold mb-6 text-gray-800">
+          Related Products
+        </h3>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {productsCategory.map((p) => (
             <div
-              className="product bg-gray-300 p-5 rounded-md shadow-md cursor-pointer mb-5"
               key={p.id}
               onClick={() => handleBtnDetaile(p.id)}
+              className="
+            bg-white
+            border border-gray-200
+            rounded-xl
+            shadow-sm
+            hover:shadow-lg
+            transition
+            cursor-pointer
+            overflow-hidden
+          "
             >
-              <div className="image p-4">
+              <div className="bg-gray-50 p-4">
                 <img
                   src={p.image}
                   alt={p.title}
-                  aria-label="picture-product"
-                  className="w-full h-50 object-contain"
+                  className="w-full h-44 object-contain"
                 />
               </div>
-              <div className="info-content">
-                <h3 className="text-[25px] font-semibold">{p.title}</h3>
-                <p className="text-[20px] font-black">{p.price} DH</p>
+
+              <div className="p-4 space-y-1">
+                <h3 className="text-gray-800 font-medium line-clamp-2">
+                  {p.title}
+                </h3>
+                <p className="text-lg font-bold text-gray-900">{p.price} DH</p>
               </div>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );

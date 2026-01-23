@@ -9,25 +9,53 @@ export default function Product({ product }) {
   };
   return (
     <div
-      className="product bg-gray-300 cursor-pointer"
-      onClick={() => {
-        hanleBtnDetaille(product.id);
-      }}
+      onClick={() => hanleBtnDetaille(product.id)}
+      className="
+    product
+    bg-white
+    rounded-xl
+    border border-gray-200
+    shadow-sm
+    hover:shadow-lg
+    transition-all duration-300
+    cursor-pointer
+    overflow-hidden
+  "
     >
-      <div className="image w-full max-h-50 mb-10">
-        <img src={product.image} alt="" className="h-50 mx-auto py-4" />
+      {/* Image */}
+      <div className="w-full h-56 flex items-center justify-center bg-gray-50">
+        <img
+          src={product.image}
+          alt={product.title}
+          className="h-44 object-contain"
+        />
       </div>
-      <div className="content px-5 py-2 bg-red-300">
-        <h3 className="text-[18px] font-bold">{product.title}</h3>
-        <p className="text-[20px]">{product.price}</p>
+
+      {/* Content */}
+      <div className="p-4 space-y-2">
+        <h3 className="text-gray-800 text-[16px] font-semibold line-clamp-2">
+          {product.title}
+        </h3>
+
+        <p className="text-lg font-bold text-gray-900">${product.price}</p>
+
         <button
-          className="bg-blue-400 py-1 px-5 cursor-pointer"
           onClick={(e) => {
             e.stopPropagation();
             addToCart(product);
           }}
+          className="
+        w-full
+        mt-2
+        bg-indigo-600
+        hover:bg-indigo-700
+        text-white
+        py-2
+        rounded-lg
+        transition
+      "
         >
-          Add
+          Add to cart
         </button>
       </div>
     </div>
