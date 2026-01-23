@@ -22,7 +22,6 @@ export default function Product({ product }) {
     overflow-hidden
   "
     >
-      {/* Image */}
       <div className="w-full h-56 flex items-center justify-center bg-gray-50">
         <img
           src={product.image}
@@ -31,9 +30,8 @@ export default function Product({ product }) {
         />
       </div>
 
-      {/* Content */}
       <div className="p-4 space-y-2">
-        <h3 className="text-gray-800 text-[16px] font-semibold line-clamp-2">
+        <h3 className="text-gray-800 text-[16px] font-semibold line-clamp-1">
           {product.title}
         </h3>
 

@@ -5,6 +5,11 @@ import { useCart } from "../../Context/CartContext";
 import { NavLink, useNavigate } from "react-router";
 
 export default function Navbar() {
+  const navLinks = [
+    {id:1, link:'Shop', to:'/'},
+    {id:2, link:'About', to:'/About'},
+    {id:3, link:'Contact', to:'/Contact'},
+  ];
   const [openCart, setOpenCart] = useState(false);
   const { cart, removeFromCart, clearCart, total } = useCart();
   const navigate = useNavigate();
@@ -26,15 +31,17 @@ export default function Navbar() {
         </h2>
       </div>
       <ul className="flex space-x-6">
-        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">
-          <NavLink to="/">Shop</NavLink>
+        {navLinks.map((ele) => {
+          return(
+        <li className={`text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150`} key={ele.id}>
+          <NavLink className={({isActive}) => isActive 
+          ? 'border-b-3 border-orange-300 text-orange-500 pb-2'
+          :'pb-2'} 
+          to={ele.to}
+          >{ele.link}</NavLink>
         </li>
-        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">
-          <NavLink to="/About">About</NavLink>
-        </li>
-        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">
-          <NavLink to="/Contact">Contact</NavLink>
-        </li>
+          )
+        })}
       </ul>
       <div className="icon">
         <FaShop

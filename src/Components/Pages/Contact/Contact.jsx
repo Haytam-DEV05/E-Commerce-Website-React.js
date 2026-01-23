@@ -39,7 +39,7 @@ export default function Contact() {
               className="info-contact flex items-center space-x-3 space-y-7 ml-10"
               key={c.id}
             >
-              <div className="icon bg-green-500 w-15 h-15 rounded-full flex items-center justify-center">
+              <div className="icon bg-orange-300 w-15 h-15 rounded-full flex items-center justify-center me-5">
                 {c.icon}
               </div>
               <div className="info">
@@ -87,8 +87,8 @@ export default function Contact() {
                 className="block w-full border border-black rounded-md py-3 px-10 outline-0"
               ></textarea>
             </div>
-            <button className="bg-orange-300 text-[25px] hover:bg-orange-500 text-white px-10 py-2 cursor-pointer w-full rounded-4xl mt-5 hover:-translate-y-1.5 transition-all duration-200">
-              <span className="bg-red-500">{IoSend}</span>Send Message
+            <button className="bg-orange-300 text-[25px] hover:bg-orange-500 text-white px-10 py-3 cursor-pointer w-full rounded-4xl mt-5 hover:-translate-y-1.5 transition-all duration-200 flex justify-center items-center">
+              <span className="me-5"><IoSend size={28}/></span>Send Message
             </button>
           </form>
         </div>

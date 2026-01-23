@@ -33,7 +33,6 @@ export default function DetailleProduct() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 my-10">
-      {/* Back Button */}
       <button
         onClick={handleBtnPrev}
         className="
@@ -48,8 +47,6 @@ export default function DetailleProduct() {
       >
         ← Retour
       </button>
-
-      {/* Main Product */}
       <div
         className="
       bg-white
@@ -67,7 +64,6 @@ export default function DetailleProduct() {
       mx-auto
     "
       >
-        {/* Image */}
         <div className="flex-1 bg-gray-50 rounded-2xl p-6">
           <img
             src={currentProduct.image}
@@ -76,7 +72,6 @@ export default function DetailleProduct() {
           />
         </div>
 
-        {/* Info */}
         <div className="flex-1 space-y-4 text-gray-800">
           <h2 className="text-2xl font-semibold">{currentProduct.title}</h2>
 
