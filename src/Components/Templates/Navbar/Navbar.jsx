@@ -16,7 +16,7 @@ export default function Navbar() {
     navigate("/");
   };
   return (
-    <nav className="flex justify-around items-center bg-gray-200 shadow-md relative">
+    <nav className="flex justify-around items-center bg-gray-200 shadow-md fixed w-full backdrop-blur-3xl top-0 min-h-20">
       <div className="logo">
         <h2
           className="text-[30px] font-semibold cursor-pointer"
@@ -25,6 +25,11 @@ export default function Navbar() {
           Ecomm
         </h2>
       </div>
+      <ul className="flex space-x-6">
+        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">Shop</li>
+        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">About</li>
+        <li className="text-[20px] font-medium cursor-pointer hover:-translate-y-1 transition-all duration-150">Contact</li>
+      </ul>
       <div className="icon">
         <FaShop
           size={30}

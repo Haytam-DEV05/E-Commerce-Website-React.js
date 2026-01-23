@@ -30,7 +30,7 @@ export default function Header() {
     return (
       <div>
         <Navbar />
-        <main>
+        <main className="mt-20">
           <Outlet />
         </main>
       </div>
