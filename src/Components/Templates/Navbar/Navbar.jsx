@@ -21,7 +21,7 @@ export default function Navbar() {
     navigate("/");
   };
   return (
-    <nav className="flex justify-around items-center bg-gray-200 shadow-md fixed w-full backdrop-blur-3xl top-0 min-h-20">
+    <nav className="flex justify-around items-center bg-gray-200 shadow-md fixed w-full backdrop-blur-3xl top-0 min-h-20 z-90">
       <div className="logo">
         <h2
           className="text-[30px] font-semibold cursor-pointer"

@@ -1,4 +1,5 @@
-import React from "react";
+import Testimonials from "./Testimonials/Testimonials";
+import Banner from "./Banner/Banner";
 
 export default function About() {
   const infos = [
@@ -59,6 +60,8 @@ export default function About() {
           is our priority.
         </p>
       </div>
+      <Testimonials />
+      <Banner />
     </section>
   );
 }
