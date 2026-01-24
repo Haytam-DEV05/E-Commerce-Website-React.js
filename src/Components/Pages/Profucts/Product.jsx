@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router";
 import { useCart } from "../../Context/CartContext";
 
+
 export default function Product({ product }) {
   const { addToCart } = useCart();
   const navigate = useNavigate();

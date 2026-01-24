@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Product from "./Product";
 import Shop from "../Shop/Shop";
-
 export default function Products() {
   const buttonsCategory = [
     { id: 1, category: "all", link: "All" },
