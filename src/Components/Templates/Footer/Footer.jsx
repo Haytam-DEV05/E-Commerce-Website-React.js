@@ -7,14 +7,14 @@ const socials = [
 export default function Footer() {
   return (
     <footer className="bg-gray-200 shadow-md px-5">
-      <div className="top-footer grid grid-cols-4 gap-4 py-7">
-        <div className="col-span-2">
+      <div className="top-footer text-center grid grid-col-1 md:text-start md:grid-cols-4 gap-4 py-7">
+        <div className="md:col-span-2">
           <div className="logo text-[30px] font-semibold">Ecomm</div>
-          <p className="max-w-[70%] text-[18px] font-normal my-5">
+          <p className="md:max-w-[70%] text-[18px] font-normal my-5">
             Curated home essentials for modern living. We believe in quality,
             sustainability, and thoughtful design.
           </p>
-          <div className="social-icons my-5 flex max-w-fit space-x-10">
+          <div className="social-icons my-5 mx-auto md:mx-0 flex max-w-fit space-x-10">
             {socials.map((social) => {
               return (
                 <div

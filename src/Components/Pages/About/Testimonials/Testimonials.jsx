@@ -16,7 +16,7 @@ export default function Testimonials() {
           <div className="quote mb-5">
             <LuQuote size={60}/>
           </div>
-          <p className="description tracking-wider leading-loose my-5 max-w-[80%] mx-auto">
+          <p className="description tracking-wider leading-loose my-5 max-w-[80%] mx-auto text-center">
             “Velora has completely transformed how I shop for clothes. Every
             piece feels thoughtfully designed and incredibly comfortable — from
             their polos to their jackets. It’s rare to find a brand that gets
@@ -33,7 +33,7 @@ export default function Testimonials() {
           <div className="quote mb-5">
             <LuQuote size={60}/>
           </div>
-          <p className="description tracking-wider leading-loose my-5 max-w-[80%] mx-auto">
+          <p className="description tracking-wider leading-loose my-5 max-w-[80%] mx-auto text-center">
             “Velora has completely transformed how I shop for clothes. Every
             piece feels thoughtfully designed and incredibly comfortable — from
             their polos to their jackets. It’s rare to find a brand that gets
@@ -50,7 +50,7 @@ export default function Testimonials() {
           <div className="quote mb-5">
             <LuQuote size={60}/>
           </div>
-          <p className="description tracking-wider leading-loose my-5 max-w-[80%] mx-auto">
+          <p className="description tracking-wider leading-loose my-5 max-w-[80%] mx-auto text-center">
             “Velora has completely transformed how I shop for clothes. Every
             piece feels thoughtfully designed and incredibly comfortable — from
             their polos to their jackets. It’s rare to find a brand that gets

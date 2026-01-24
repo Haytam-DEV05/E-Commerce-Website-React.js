@@ -3,6 +3,13 @@ import Product from "./Product";
 import Shop from "../Shop/Shop";
 
 export default function Products() {
+  const buttonsCategory = [
+    { id: 1, category: "all", link: "All" },
+    { id: 2, category: "men's clothing", link: "Men's clothing" },
+    { id: 3, category: "women's clothing", link: "Women's clothing" },
+    { id: 4, category: "jewelery", link: "Jewelery" },
+    { id: 5, category: "electronics", link: "Electronics" },
+  ];
   const [allProducts, setAllProducts] = useState([]);
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -15,34 +22,31 @@ export default function Products() {
   }, []);
 
   const handleBtnData = (param) => {
-    param === 'all'
-      ? setProducts(allProducts) 
+    param === "all"
+      ? setProducts(allProducts)
       : setProducts(allProducts.filter((ele) => ele.category === param));
-  }
-
+  };
 
   return (
     <>
       <Shop />
       <div className="max-w-275 mx-auto my-10">
         <div className="header">
-          <h2 className="text-[40px] font-bold mb-10 border-b-2 border-orange-300 max-w-fit mx-auto">Our Products</h2>
-          <div className="buttons-category flex items-center gap-2 max-w-fit mx-auto my-10">
-            <button className="bg-orange-300 py-2 px-7 rounded-4xl cursor-pointer text-[20px] font-medium hover:bg-orange-500 transition-all duration-300" onClick={() => handleBtnData('all')}>
-              All
-            </button>
-            <button className="bg-orange-300 py-2 px-7 rounded-4xl cursor-pointer text-[20px] font-medium hover:bg-orange-500 transition-all duration-300" onClick={() => handleBtnData('men\'s clothing')}>
-              men's clothing
-            </button>
-            <button className="bg-orange-300 py-2 px-7 rounded-4xl cursor-pointer text-[20px] font-medium hover:bg-orange-500 transition-all duration-300" onClick={() => handleBtnData('women\'s clothing')}>
-              women's clothing
-            </button>
-            <button className="bg-orange-300 py-2 px-7 rounded-4xl cursor-pointer text-[20px] font-medium hover:bg-orange-500 transition-all duration-300" onClick={() => handleBtnData('jewelery')}>
-              jewelery
-            </button>
-            <button className="bg-orange-300 py-2 px-7 rounded-4xl cursor-pointer text-[20px] font-medium hover:bg-orange-500 transition-all duration-300" onClick={() => handleBtnData('electronics')}>
-              electronics
-            </button>
+          <h2 className="text-[40px] font-bold mb-10 border-b-2 border-orange-300 max-w-fit mx-auto">
+            Our Products
+          </h2>
+          <div className="buttons-category grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-fit space-x-1 space-y-1 mx-auto my-10">
+            {buttonsCategory.map((b) => {
+              return (
+                <button
+                  key={b.id}
+                  className="bg-orange-300 py-2 px-7 rounded-4xl cursor-pointer text-[15px] font-normal md:font-medium hover:bg-orange-500 transition-all duration-300"
+                  onClick={() => handleBtnData(b.category)}
+                >
+                  {b.link}
+                </button>
+              );
+            })}
           </div>
         </div>
         <div
