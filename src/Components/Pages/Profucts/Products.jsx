@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { CiSearch } from "react-icons/ci";
 import Product from "./Product";
 import Shop from "../Shop/Shop";
 export default function Products() {
+  const [searchTitle, setSearchTitle] = useState();
   const buttonsCategory = [
     { id: 1, category: "all", link: "All" },
     { id: 2, category: "men's clothing", link: "Men's clothing" },
@@ -25,7 +27,11 @@ export default function Products() {
       ? setProducts(allProducts)
       : setProducts(allProducts.filter((ele) => ele.category === param));
   };
-
+  const handleBtnSearch = (e) => {
+    setProducts(
+      allProducts.filter((ele) => ele.title.includes(e.target.value)),
+    );
+  };
   return (
     <>
       <Shop />
@@ -34,6 +40,16 @@ export default function Products() {
           <h2 className="text-[40px] font-bold mb-10 border-b-2 border-orange-300 max-w-fit mx-auto">
             Our Products
           </h2>
+          <div className="form flex items-center border-2 rounded-full py-1 px-5">
+            <CiSearch size={28} />
+            <input
+              type="text"
+              placeholder="Serach By Title..."
+              className="w-full outline-0 py-1 px-4"
+              value={searchTitle}
+              onChange={handleBtnSearch}
+            />
+          </div>
           <div className="buttons-category grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-fit space-x-1 space-y-1 mx-auto my-10">
             {buttonsCategory.map((b) => {
               return (
