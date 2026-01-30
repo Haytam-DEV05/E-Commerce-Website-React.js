@@ -28,8 +28,12 @@ export default function Products() {
       : setProducts(allProducts.filter((ele) => ele.category === param));
   };
   const handleBtnSearch = (e) => {
+    const value = e.target.value;
+    setSearchTitle(value);
     setProducts(
-      allProducts.filter((ele) => ele.title.includes(e.target.value)),
+      allProducts.filter((ele) =>
+        ele.title.toLowerCase().includes(value.toLowerCase()),
+      ),
     );
   };
   return (
