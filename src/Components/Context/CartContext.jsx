@@ -13,7 +13,7 @@ export function CartProvider({ children }) {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
-  // ➕ Add to cart
+  // Add to cart
   const addToCart = (product) => {
     const exist = cart.find((item) => item.id === product.id);
 
@@ -28,17 +28,17 @@ export function CartProvider({ children }) {
     }
   };
 
-  // ➖ Remove from cart
+  // Remove from cart
   const removeFromCart = (id) => {
     setCart(cart.filter((item) => item.id !== id));
   };
 
-  // 🧹 Clear cart
+  // Clear cart
   const clearCart = () => {
     setCart([]);
   };
 
-  // 💰 Total price
+  //  Total price
   const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
 
   return (

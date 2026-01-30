@@ -1,9 +1,24 @@
+import { useState } from "react";
 import { IoMdCloseCircle } from "react-icons/io";
 
 export default function Register({ closeForm }) {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+  const handleForm = (e) => {
+    e.preventDefault();
+    const { name, email, password } = form;
+    if (!name || !email || !password) return alert("pleas Enter The Field");
+    console.log(form.name);
+    console.log(form.email);
+    console.log(form.password);
+    closeForm();
+  };
   return (
-    <div className="min-h-screen min-w-screen absolute z-99 p-10 backdrop-blur-lg">
-      <div className="box flex justify-center items-center flex-col bg-gray-400 max-w-fit mx-auto px-10 py-5 rounded-lg">
+    <div className="min-h-screen min-w-screen fixed z-99 p-10 backdrop-blur-lg">
+      <div className="box bg-gray-400 flex items-center justify-center flex-col max-w-fit mx-auto px-10 py-5 rounded-lg">
         <div className="icons-close relative w-full mb-10">
           <IoMdCloseCircle
             size={30}
@@ -14,13 +29,15 @@ export default function Register({ closeForm }) {
         <h3 className="pb-1 border-black border-b-3 text-[20px] font-semibold">
           Register
         </h3>
-        <form action="" className="">
+        <form onSubmit={handleForm}>
           <div className="my-5">
             <input
               type="text"
               name="name"
               placeholder="Enter Your Name"
               className="border border-black w-full outline-0 px-10 py-2"
+              value={form.name}
+              onChange={(e) => setForm({ ...form, name: e.target.value })}
             />
           </div>
           <div className="my-5">
@@ -29,6 +46,8 @@ export default function Register({ closeForm }) {
               name="email"
               placeholder="Your@gmail.com"
               className="border border-black w-full outline-0 px-10 py-2"
+              value={form.email}
+              onChange={(e) => setForm({ ...form, email: e.target.value })}
             />
           </div>
           <div className="my-5">
@@ -37,11 +56,14 @@ export default function Register({ closeForm }) {
               name="password"
               placeholder="Enter Your Password"
               className="border border-black w-full outline-0 px-10 py-2"
+              value={form.password}
+              onChange={(e) => setForm({ ...form, password: e.target.value })}
             />
           </div>
           <button
             className="bg-blue-300 px-8 py-1 cursor-pointer rounded-md w-full"
-            onClick={closeForm}
+            // onClick={closeForm}
+            type="submit"
           >
             Register
           </button>
